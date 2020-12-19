@@ -15,8 +15,8 @@ FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates
 
-#RUN mkdir /app
-#WORKDIR /app
-#COPY --from=builder /app/blacklistcheck .
+RUN mkdir /app
+WORKDIR /app
+COPY --from=builder /app/blacklist .
 
-#CMD ["./blacklistcheck"]
+CMD ["./blacklist"]
